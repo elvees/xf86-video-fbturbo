@@ -1096,8 +1096,8 @@ SunxiMaliDRI2 *SunxiMaliDRI2_Init(ScreenPtr pScreen,
 
     if (!xf86LoadKernelModule("mali"))
         xf86DrvMsg(pScreen->myNum, X_INFO, "can't load 'mali' kernel module\n");
-    if (!xf86LoadKernelModule("mali_drm"))
-        xf86DrvMsg(pScreen->myNum, X_INFO, "can't load 'mali_drm' kernel module\n");
+    if (!xf86LoadKernelModule(DRM_MODULE))
+        xf86DrvMsg(pScreen->myNum, X_INFO, "can't load '" DRM_MODULE "' kernel module\n");
 
     if (!xf86LoadKernelModule("sunxi_cedar_mod")) {
         xf86DrvMsg(pScreen->myNum, X_INFO, "can't load 'sunxi_cedar_mod' kernel module\n");
@@ -1107,7 +1107,7 @@ SunxiMaliDRI2 *SunxiMaliDRI2_Init(ScreenPtr pScreen,
     if (!xf86LoadSubModule(xf86Screens[pScreen->myNum], "dri2"))
         return NULL;
 
-    if ((drm_fd = drmOpen("mali_drm", NULL)) < 0) {
+    if ((drm_fd = drmOpen(DRM_MODULE, NULL)) < 0) {
         ErrorF("SunxiMaliDRI2_Init: drmOpen failed!\n");
         return NULL;
     }
