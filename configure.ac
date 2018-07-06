@@ -55,6 +55,15 @@ AC_ARG_WITH(xorg-module-dir,
                            [Default xorg module directory [[default=$libdir/xorg/modules]]]),
             [moduledir="$withval"],
             [moduledir="$libdir/xorg/modules"])
+
+AC_ARG_WITH(drm-module,
+            AS_HELP_STRING([--with-drm-module=NAME],
+                           [Name of the DRM module [[default=mali_drm]]]),
+            [drm_module="$withval"],
+            [drm_module=mali_drm])
+
+AC_DEFINE_UNQUOTED([DRM_MODULE], ["$drm_module"], [Name of the DRM module])
+
 AC_ARG_ENABLE(pciaccess,     AS_HELP_STRING([--enable-pciaccess],
                              [Enable use of libpciaccess (default: disabled)]),
 			     [PCIACCESS=$enableval], [PCIACCESS=no])
