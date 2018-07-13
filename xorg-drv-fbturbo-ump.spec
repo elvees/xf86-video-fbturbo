@@ -25,8 +25,8 @@ Video driver, primarily optimized for the devices powered by the Allwinner SoC.
 %build
 %autoreconf
 %configure \
-	--with-xorg-module-dir=%_x11modulesdir
-
+    --with-xorg-module-dir=%_x11modulesdir \
+    --with-drm-module=vpout-drm
 %make_build
 
 %install
