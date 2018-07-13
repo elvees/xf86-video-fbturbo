@@ -1,5 +1,5 @@
 Name:	 xorg-drv-fbturbo-mcom02
-Version: 0.5.1.0
+Version: 0.5.1.1
 Release: alt1
 ExclusiveArch: armh
 
@@ -40,6 +40,11 @@ cp -b -S %name-backup xorg.conf %buildroot%_x11sysconfdir/xorg.conf
 %_x11modulesdir/drivers/*.so
 
 %changelog
+* Fri Jul 20 2018 Andrey Solodovnikov <hepoh@altlinux.org> 0.5.1.1-alt1
+Set version to 0.5.1.1
+Rename package to xorg-drv-fbturbo-mcom02
+Use vpout-drm.ko instead of mali_drm.ko
+
 * Thu May 17 2018 Andrey Solodovnikov <hepoh@altlinux.org> 0.5.1.0-alt1
 Initial build for ALT
 
