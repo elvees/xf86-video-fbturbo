@@ -1,4 +1,4 @@
-Name:	 xorg-drv-fbturbo-ump
+Name:	 xorg-drv-fbturbo-mcom02
 Version: 0.5.1.0
 Release: alt1
 ExclusiveArch: armh
